@@ -71,7 +71,6 @@ extern const stream_info_t stream_info_http1;
 extern const stream_info_t stream_info_http2;
 extern const stream_info_t stream_info_dvb;
 extern const stream_info_t stream_info_tv;
-extern const stream_info_t stream_info_radio;
 extern const stream_info_t stream_info_pvr;
 extern const stream_info_t stream_info_ftp;
 extern const stream_info_t stream_info_vstream;
@@ -106,9 +105,6 @@ static const stream_info_t* const auto_open_streams[] = {
 #endif
 #ifdef CONFIG_TV
   &stream_info_tv,
-#endif
-#ifdef CONFIG_RADIO
-  &stream_info_radio,
 #endif
 #ifdef CONFIG_PVR
   &stream_info_pvr,

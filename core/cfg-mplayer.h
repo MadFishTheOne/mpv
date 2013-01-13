@@ -31,7 +31,6 @@
 #include "core/m_config.h"
 #include "core/m_option.h"
 #include "stream/tv.h"
-#include "stream/stream_radio.h"
 #include "video/csputils.h"
 
 extern char *lirc_configfile;
@@ -71,23 +70,6 @@ extern const m_option_t cdda_opts[];
 
 extern int sws_flags;
 extern const char pp_help[];
-
-#ifdef CONFIG_RADIO
-const m_option_t radioopts_conf[]={
-    {"device", &stream_radio_defaults.device, CONF_TYPE_STRING, 0, 0 ,0, NULL},
-    {"driver", &stream_radio_defaults.driver, CONF_TYPE_STRING, 0, 0 ,0, NULL},
-#ifdef RADIO_BSDBT848_HDR
-    {"freq_min", &stream_radio_defaults.freq_min, CONF_TYPE_FLOAT, 0, 0 ,0, NULL},
-    {"freq_max", &stream_radio_defaults.freq_max, CONF_TYPE_FLOAT, 0, 0 ,0, NULL},
-#endif
-    {"channels", &stream_radio_defaults.channels, CONF_TYPE_STRING_LIST, 0, 0 ,0, NULL},
-    {"volume", &stream_radio_defaults.volume, CONF_TYPE_INT, CONF_RANGE, 0 ,100, NULL},
-    {"adevice", &stream_radio_defaults.adevice, CONF_TYPE_STRING, 0, 0 ,0, NULL},
-    {"arate", &stream_radio_defaults.arate, CONF_TYPE_INT, CONF_MIN, 0 ,0, NULL},
-    {"achannels", &stream_radio_defaults.achannels, CONF_TYPE_INT, CONF_MIN, 0 ,0, NULL},
-    {NULL, NULL, 0, 0, 0, 0, NULL}
-};
-#endif /* CONFIG_RADIO */
 
 #ifdef CONFIG_TV
 const m_option_t tvopts_conf[]={
@@ -235,7 +217,6 @@ const m_option_t msgl_config[]={
     { "encode", &mp_msg_levels[MSGT_ENCODE], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
     { "xacodec", &mp_msg_levels[MSGT_XACODEC], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
     { "tv", &mp_msg_levels[MSGT_TV], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
-    { "radio", &mp_msg_levels[MSGT_RADIO], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
     { "osdep", &mp_msg_levels[MSGT_OSDEP], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
     { "spudec", &mp_msg_levels[MSGT_SPUDEC], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
     { "playtree", &mp_msg_levels[MSGT_PLAYTREE], CONF_TYPE_INT, CONF_RANGE, -1, 9, NULL },
@@ -416,9 +397,6 @@ const m_option_t common_opts[] = {
     OPT_MAKE_FLAGS("extbased", extension_parsing, 0),
 
     {"mf", (void *) mfopts_conf, CONF_TYPE_SUBCONFIG, 0,0,0, NULL},
-#ifdef CONFIG_RADIO
-    {"radio", radioopts_conf, CONF_TYPE_SUBCONFIG, 0, 0, 0, NULL},
-#endif /* CONFIG_RADIO */
 #ifdef CONFIG_TV
     {"tv", (void *) tvopts_conf, CONF_TYPE_SUBCONFIG, 0, 0, 0, NULL},
 #endif /* CONFIG_TV */

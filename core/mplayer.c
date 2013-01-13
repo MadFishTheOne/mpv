@@ -103,7 +103,6 @@ int enable_mouse_movements = 0;
 char *heartbeat_cmd;
 
 #include "stream/tv.h"
-#include "stream/stream_radio.h"
 #ifdef CONFIG_DVBIN
 #include "stream/dvbin.h"
 #endif

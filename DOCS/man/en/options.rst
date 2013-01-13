@@ -1516,62 +1516,6 @@
     Particularly useful on slow terminals or broken ones which do not properly
     handle carriage return (i.e. \\r).
 
---radio=<option1:option2:...>
-    These options set various parameters of the radio capture module. For
-    listening to radio with mpv use ``radio://<frequency>`` (if channels
-    option is not given) or ``radio://<channel_number>`` (if channels option
-    is given) as a movie URL. You can see allowed frequency range by running
-    mpv with ``-v``. To start the grabbing subsystem, use
-    ``radio://<frequency or channel>/capture``. If the capture keyword is not
-    given you can listen to radio using the line-in cable only. Using capture
-    to listen is not recommended due to synchronization problems, which makes
-    this process uncomfortable.
-
-    Available options are:
-
-    device=<value>
-        Radio device to use (default: ``/dev/radio0`` for Linux and
-        ``/dev/tuner0`` for \*BSD).
-
-    driver=<value>
-        Radio driver to use (default: v4l2 if available, otherwise v4l).
-        Currently, v4l and v4l2 drivers are supported.
-
-    volume=<0..100>
-        sound volume for radio device (default 100)
-
-    freq_min=<value> (\*BSD BT848 only)
-        minimum allowed frequency (default: 87.50)
-
-    freq_max=<value> (\*BSD BT848 only)
-        maximum allowed frequency (default: 108.00)
-
-    channels=<frequency>-<name>,<frequency>-<name>,...
-        Set channel list. Use _ for spaces in names (or play with quoting ;-).
-        The channel names will then be written using OSD and the slave
-        commands radio_step_channel and radio_set_channel will be usable for a
-        remote control (see LIRC). If given, number in movie URL will be
-        treated as channel position in channel list.
-
-        *EXAMPLE*: ``radio://1``, ``radio://104.4``, ``radio_set_channel 1``
-
-    adevice=<value> (radio capture only)
-        Name of device to capture sound from. Without such a name capture will
-        be disabled, even if the capture keyword appears in the URL. For ALSA
-        devices use it in the form ``hw=<card>.<device>``. If the device name
-        contains a '=', the module will use ALSA to capture, otherwise OSS.
-
-    arate=<value> (radio capture only)
-        Rate in samples per second (default: 44100).
-
-        *NOTE*: When using audio capture set also ``--rawaudio=rate=<value>``
-        option with the same value as arate. If you have problems with sound
-        speed (runs too quickly), try to play with different rate values (e.g.
-        48000, 44100, 32000,...).
-
-    achannels=<value> (radio capture only)
-        Number of audio channels to capture.
-
 --rawaudio=<option1:option2:...>
     This option lets you play raw audio files. You have to use
     ``--demuxer=rawaudio`` as well. It may also be used to play audio CDs
@@ -2008,13 +1952,10 @@
 
     driver=<value>
         See ``--tv=driver=help`` for a list of compiled-in TV input drivers.
-        available: dummy, v4l, v4l2, bsdbt848 (default: autodetect)
+        available: dummy, v4l2 (default: autodetect)
 
     device=<value>
-        Specify TV device (default: ``/dev/video0``). NOTE: For the bsdbt848
-        driver you can provide both bktr and tuner device names separating
-        them with a comma, tuner after bktr (e.g. ``--tv
-        device=/dev/bktr1,/dev/tuner1``).
+        Specify TV device (default: ``/dev/video0``).
 
     input=<value>
         Specify input (default: 0 (TV), see console output for available
@@ -2043,8 +1984,7 @@
         maximum size of the capture buffer in megabytes (default: dynamical)
 
     norm=<value>
-        For bsdbt848 and v4l, PAL, SECAM, NTSC are available. For v4l2, see
-        the console output for a list of all available norms, also see the
+        See the console output for a list of all available norms, also see the
         normid option below.
 
     normid=<value> (v4l2 only)

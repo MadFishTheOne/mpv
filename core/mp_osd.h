@@ -27,7 +27,6 @@
 #define OSD_MSG_OSD_STATUS              4
 #define OSD_MSG_BAR                     5
 #define OSD_MSG_PAUSE                   6
-#define OSD_MSG_RADIO_CHANNEL           7
 #define OSD_MSG_TV_CHANNEL              8
 /// Base id for messages generated from the commmand to property bridge.
 #define OSD_MSG_PROPERTY                0x100

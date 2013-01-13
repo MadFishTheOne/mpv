@@ -112,11 +112,6 @@ static const struct m_option_type m_option_type_cycle_dir = {
 static const mp_cmd_t mp_cmds[] = {
   { MP_CMD_IGNORE, "ignore", },
 
-  { MP_CMD_RADIO_STEP_CHANNEL, "radio_step_channel", { ARG_INT } },
-  { MP_CMD_RADIO_SET_CHANNEL, "radio_set_channel", { ARG_STRING } },
-  { MP_CMD_RADIO_SET_FREQ, "radio_set_freq", { ARG_FLOAT } },
-  { MP_CMD_RADIO_STEP_FREQ, "radio_step_freq", {ARG_FLOAT } },
-
   { MP_CMD_SEEK, "seek", {
       ARG_FLOAT,
       OARG_CHOICE(0, ({"relative", 0},          {"0", 0},

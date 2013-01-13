@@ -23,7 +23,6 @@ Synopsis
 | **mpv** dvd://[title|[start\_title]-end\_title][/device] [options]
 | **mpv** \vcd://track[/device]
 | **mpv** \tv://[channel][/input_id] [options]
-| **mpv** radio://[channel|frequency][/capture] [options]
 | **mpv** \pvr:// [options]
 | **mpv** \dvb://[card\_number@]channel [options]
 | **mpv** \mf://[filemask|\@listfile] [-mf options] [options]
