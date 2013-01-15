@@ -8,8 +8,8 @@ MPlayer (also called mplayer, mplayer-svn, mplayer1). Many changes
 have been made. Some changes are incompatible, or completely change how the
 player behaves.
 
-General changes for mplayer-svn to mplayer2
--------------------------------------------
+General changes over mplayer-svn
+--------------------------------
 
 * Removal of the internal GUI, MEncoder, OSD menu
 * Better pause handling (don't unpause on a command)
@@ -31,12 +31,6 @@ General changes for mplayer-svn to mplayer2
 * Improvements when playing multiple files (``--fixed-vo``)
 * Screenshot improvements (instant screenshots without 1-frame delay)
 * Improved support for PulseAudio
-* General code cleanups
-* Many more changes
-
-General changes for mplayer2 to mpv
-----------------------------------------
-
 * Removal of lots of unneeded code to encourage developer activity (less
   obscure scary zombie code that kills any desire for hacking the codebase)
 * Removal of dust and dead bodies (code-wise), such as kernel drivers for
@@ -83,7 +77,6 @@ Command line switches
   syntax is mentioned in all documentation and so on, so it's a good thing to
   know about this change.
 
-  (The new syntax was introduced in mplayer2.)
 * In general, negating switches like ``-noopt`` now have to be written as
   ``-no-opt``, or better ``--no-opt``.
 * Per-file options are not the default anymore. You can explicitly specify
@@ -201,6 +194,10 @@ Why this fork?
   make a reunification unlikely.
 * mplayer2 development is slow, and it's hard to get in changes. Details
   withheld as to not turn this into a rant.
+* mplayer2 sometimes merges from mpv, but the merges are usually incomplete,
+  and later bug fixes or improvements rarely make it in. This makes
+  reunification unlikely, and reinforces the idea that a fork is the right
+  thing to drive development forward.
 * mplayer-svn rarely merged from mplayer2, and mplayer2 practically stopped
   merging from mplayer-svn (not even code cleanups or new features are merged)
 * **mpv** intents to continuously merge from mplayer-svn and mplayer2, while
