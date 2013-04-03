@@ -3319,6 +3319,9 @@ static void run_playloop(struct MPContext *mpctx)
 
         //=================== FLIP PAGE (VIDEO BLT): ======================
 
+        if (mpctx->time_frame > vo->flip_queue_offset)
+            break;
+
         vo_new_frame_imminent(vo);
         struct sh_video *sh_video = mpctx->sh_video;
         mpctx->video_pts = sh_video->pts;
