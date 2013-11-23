@@ -604,6 +604,7 @@ const m_option_t mp_opts[] = {
     // set fullscreen switch method (workaround for buggy WMs)
     OPT_INTRANGE("fsmode-dontuse", vo.fsmode, 0, 31, 4096),
     OPT_FLAG("native-keyrepeat", vo.native_keyrepeat, 0),
+    OPT_FLAG("keyboard-layout-independent", vo.keyboard_layout_independent, 0),
     OPT_FLOATRANGE("panscan", vo.panscan, 0, 0.0, 1.0),
     OPT_FLOATRANGE("video-zoom", vo.zoom, 0, -20.0, 20.0),
     OPT_FLOATRANGE("video-pan-x", vo.pan_x, 0, -3.0, 3.0),

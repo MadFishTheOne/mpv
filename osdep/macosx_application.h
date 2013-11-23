@@ -20,6 +20,7 @@
 #define MPV_MACOSX_APPLICATION
 
 struct input_ctx;
+struct MPOpts;
 
 typedef int (*mpv_main_fn)(int, char**);
 
@@ -47,6 +48,7 @@ void cocoa_stop_runloop(void);
 void cocoa_post_fake_event(void);
 
 void cocoa_set_input_context(struct input_ctx *input_context);
+void cocoa_set_options(struct MPOpts *opts);
 
 void macosx_finder_args_preinit(int *argc, char ***argv);
 

@@ -106,7 +106,7 @@ static const struct mp_keymap keymap[] = {
     {XKB_KEY_KP_Up,     MP_KEY_KP8},   {XKB_KEY_KP_Page_Up,   MP_KEY_KP9},
     {XKB_KEY_KP_Delete, MP_KEY_KPDEL},
 
-    {0, 0}
+    {-1, 0}
 };
 
 

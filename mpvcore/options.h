@@ -17,6 +17,7 @@ typedef struct mp_vo_opts {
     char *winname;
     char** fstype_list;
     int native_keyrepeat;
+    int keyboard_layout_independent;
 
     float panscan;
     float zoom;

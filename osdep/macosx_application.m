@@ -75,6 +75,7 @@ static NSString *escape_loadfile_name(NSString *input)
 @synthesize willStopOnOpenEvent = _will_stop_on_open_event;
 
 @synthesize inputContext = _input_context;
+@synthesize options = _options;
 @synthesize eventsResponder = _events_responder;
 @synthesize menuItems = _menu_items;
 @synthesize input_ready = _input_ready;
@@ -394,6 +395,11 @@ void cocoa_set_input_context(struct input_ctx *input_context)
     }
 
     mpv_shared_app().inputContext = input_context;
+}
+
+void cocoa_set_options(struct MPOpts *opts)
+{
+    mpv_shared_app().options = opts;
 }
 
 void cocoa_post_fake_event(void)

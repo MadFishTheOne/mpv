@@ -126,6 +126,7 @@ static MP_NORETURN void exit_player(struct MPContext *mpctx,
 
 #if HAVE_COCOA
     cocoa_set_input_context(NULL);
+    cocoa_set_options(NULL);
 #endif
 
     command_uninit(mpctx);
@@ -322,6 +323,10 @@ static int mpv_main(int argc, char *argv[])
 
     mpctx->global = talloc_zero(mpctx, struct mpv_global);
     mpctx->global->opts = opts;
+
+#if HAVE_COCOA
+    cocoa_set_options(opts);
+#endif
 
     // Nothing must call mp_msg() before this
     mp_msg_init(mpctx->global);

@@ -453,7 +453,7 @@ int vo_reconfig(struct vo *vo, struct mp_image_params *params, int flags)
  *         if not found.
  */
 int lookup_keymap_table(const struct mp_keymap *map, int key) {
-  while (map->from && map->from != key) map++;
+  while (map->from != -1 && map->from != key) map++;
   return map->to;
 }
 

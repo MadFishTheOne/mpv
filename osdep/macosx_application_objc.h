@@ -38,6 +38,7 @@
 - (void)stopPlayback;
 
 @property(nonatomic, assign) struct input_ctx *inputContext;
+@property(nonatomic, assign) struct MPOpts *options;
 @property(nonatomic, retain) EventsResponder *eventsResponder;
 @property(nonatomic, retain) NSMutableDictionary *menuItems;
 @property(nonatomic, retain) NSArray *files;
