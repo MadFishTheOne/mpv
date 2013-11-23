@@ -541,6 +541,8 @@ struct input_ctx {
     bool using_ar;
     bool using_cocoa_media_keys;
 
+    bool keyboard_layout_independent;
+
     // Autorepeat stuff
     short ar_state;
     int64_t last_ar;
@@ -626,6 +628,7 @@ const m_option_t mp_input_opts[] = {
     OPT_FLAG("ar", input.use_ar, CONF_GLOBAL),
     OPT_FLAG("media-keys", input.use_media_keys, CONF_GLOBAL),
 #endif
+    OPT_FLAG("keyboard-layout-independent", input.keyboard_layout_independent, CONF_GLOBAL),
     { NULL, NULL, 0, 0, 0, 0, NULL}
 };
 
@@ -2360,6 +2363,8 @@ struct input_ctx *mp_input_init(struct mpv_global *global)
     }
 #endif
 
+    ictx->keyboard_layout_independent = input_conf->keyboard_layout_independent;
+
     if (input_conf->in_file) {
         int mode = O_RDONLY;
 #ifndef __MINGW32__
@@ -2490,4 +2495,9 @@ unsigned int mp_input_get_mouse_event_counter(struct input_ctx *ictx)
     int ret = ictx->mouse_event_counter;
     input_unlock(ictx);
     return ret;
+}
+
+bool mp_input_is_keyboard_layout_independent(const struct input_ctx *ictx)
+{
+    return ictx->keyboard_layout_independent;
 }

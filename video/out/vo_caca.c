@@ -155,7 +155,7 @@ static const struct mp_keymap keysym_map[] = {
     {CACA_KEY_F11, MP_KEY_F+11}, {CACA_KEY_F12, MP_KEY_F+12},
     {CACA_KEY_F13, MP_KEY_F+13}, {CACA_KEY_F14, MP_KEY_F+14},
     {CACA_KEY_F15, MP_KEY_F+15},
-    {0, 0}
+    {-1, 0}
 };
 
 static void check_events(struct vo *vo)

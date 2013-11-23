@@ -589,7 +589,7 @@ static const struct mp_keymap keymap[] = {
     {XF86XK_Search, MP_KEY_SEARCH}, {XF86XK_Sleep, MP_KEY_SLEEP},
 #endif
 
-    {0, 0}
+    {-1, 0}
 };
 
 static int vo_x11_lookupkey(int key)

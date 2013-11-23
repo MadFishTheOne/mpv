@@ -254,6 +254,7 @@ typedef struct MPOpts {
         int use_lircc;
         int use_ar;
         int use_media_keys;
+        int keyboard_layout_independent;
         int default_bindings;
         int test;
     } input;

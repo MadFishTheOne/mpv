@@ -286,6 +286,9 @@ void mp_input_wakeup(struct input_ctx *ictx);
 // Interruptible usleep:  (used by demux)
 int mp_input_check_interrupt(struct input_ctx *ictx, int time);
 
+// Returns true if layout-independent keyboard input should be used.
+bool mp_input_is_keyboard_layout_independent(const struct input_ctx *ictx);
+
 extern int async_quit_request;
 
 #endif /* MPLAYER_INPUT_H */

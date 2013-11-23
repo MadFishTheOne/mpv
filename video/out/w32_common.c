@@ -60,7 +60,7 @@ static const struct mp_keymap vk_map[] = {
     {VK_NUMPAD6, MP_KEY_KP6}, {VK_NUMPAD7, MP_KEY_KP7}, {VK_NUMPAD8, MP_KEY_KP8},
     {VK_NUMPAD9, MP_KEY_KP9}, {VK_DECIMAL, MP_KEY_KPDEC},
 
-    {0, 0}
+    {-1, 0}
 };
 
 static void add_window_borders(HWND hwnd, RECT *rc)
